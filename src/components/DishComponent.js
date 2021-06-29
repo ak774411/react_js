@@ -13,7 +13,10 @@ class Apple extends Component {
 
 
     render(){
-        console.log(this.props.dishes.name);
+        //console.log(this.props.dishes.name);
+        if (this.props.dishes == null) {
+            return (<div></div>);
+        }
 
         const comments = this.props.dishes.comments.map((comment)=>{
             return (
@@ -27,6 +30,8 @@ class Apple extends Component {
                 </div>
             );
         });
+
+        
 
         return(
             <div className='row'>
