@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody,
     CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, FormGroup, Form, Input, Label,Col, Row  } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import {baseUrl} from '../shared/BaseUrl';
 
 
 const required = (val) => val && val.length;
@@ -83,7 +84,7 @@ class DishDetail extends Component {
                 <div className='row'>
                     <div className="col-12 col-md-5 m-1">
                         <Card>
-                            <CardImg width="100%" src={this.props.dish.image} alt={this.props.dish.name} />
+                            <CardImg width="100%" src={baseUrl+this.props.dish.image} alt={this.props.dish.name} />
                             <CardBody>
                                 <CardTitle>{this.props.dish.name}</CardTitle>
                                 <CardText>{this.props.dish.description}</CardText>
